@@ -143,7 +143,8 @@ def main():
         with col3:
             st.subheader('$' +str(df['AUM'].sum()*1000000))
             st.markdown("AUM Growth over time")
-            st.bar_chart(df, x="YEAR", y="AUM", height=250)
+            df = df.rename(columns={"AUM" : "AUM (USD) Million"})
+            st.bar_chart(df, x="YEAR", y="AUM (USD) Million", height=250)
 
 
     col20, col21 = st.columns([6,2])
