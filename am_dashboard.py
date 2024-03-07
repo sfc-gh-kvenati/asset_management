@@ -113,9 +113,9 @@ def main():
             # Donut Chart
             st.subheader('$' +str(df[df.YEAR==2024]['AUM'].values[0]*1000000))
             st.markdown("AUM (USD) YTD")
-            campaign_names = df.CATEGORY.values.tolist()
-            campaign_select = alt.selection_single(fields=["CATEGORY"], empty="all")
-            campaign_pie_clicks = (
+            cat_names = df.CATEGORY.values.tolist()
+            cat_select = alt.selection_single(fields=["CATEGORY"], empty="all")
+            cat_pie_clicks = (
                 (
                     alt.Chart(df)
                     .mark_arc(innerRadius=80)
@@ -129,17 +129,17 @@ def main():
                         color=alt.Color(
                             field="CATEGORY",
                             type="nominal",
-                            scale=alt.Scale(domain=campaign_names),
+                            scale=alt.Scale(domain=cat_names),
                             title="Category",
                         ),
-                        opacity=alt.condition(campaign_select, alt.value(1), alt.value(0.25)),
+                        opacity=alt.condition(cat_select, alt.value(1), alt.value(0.25)),
                     )
                 )
-                .add_selection(campaign_select)
+                .add_selection(cat_select)
                 .properties(height=250)
             )
 
-            st.altair_chart(campaign_pie_clicks, use_container_width=True)
+            st.altair_chart(cat_pie_clicks, use_container_width=True)
 
         with col3:
             st.subheader('$' +str(df['AUM'].sum()*1000000))
@@ -253,6 +253,7 @@ def main():
           
 
         with col21:
+            # Pie Chart
             st.subheader("ESG")
             df_esg = pd.DataFrame([['Carbon Footprint',0.33],['Social Impact Score',0.33],['Governance Score',0.33]],columns=('ESG','Score'))
             esg_chart = (
@@ -274,7 +275,7 @@ def main():
                         ),
                     )
                 )
-                .properties(height=250)
+                .properties(height=500)
             )
 
             st.altair_chart(esg_chart, use_container_width=True)
