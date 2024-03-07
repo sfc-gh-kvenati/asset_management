@@ -67,7 +67,7 @@ def main():
         "#8db6d8",
     ]
 
-    with st.columns(3)[1]:
+    with st.columns([1,2,1])[1]:
         st.title('Asset Management Dashboard')
 
     df = get_aum_data()
