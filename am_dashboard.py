@@ -275,7 +275,7 @@ def main():
                         ),
                     )
                 )
-                .properties(height=500)
+                .properties(height=350)
             )
 
             st.altair_chart(esg_chart, use_container_width=True)
