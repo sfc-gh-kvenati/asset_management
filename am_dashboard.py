@@ -77,7 +77,7 @@ def main():
     df_bench = get_bench_data()
 
 
-    col1, col2, col3 = st.columns([1,2,2])
+    col1, col2, col3 = st.columns([1,2,3])
 
     with st.container(border=True):
 
