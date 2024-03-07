@@ -1,7 +1,5 @@
 # Generated on: Python 3.9.15
 snowflake-snowpark-python
-plotly
 altair
-pydeck
 matplotlib
 streamlit
