@@ -254,7 +254,7 @@ def main():
         with col21:
             # Pie Chart
             st.subheader("ESG")
-            df_esg = pd.DataFrame([['Carbon Footprint',0.33],['Social Impact Score',0.33],['Governance Score',0.33]],columns=('ESG','Score'))
+            df_esg = pd.DataFrame([['Carbon Footprint = 3000 metric tons',0.5,],['Social Impact Score = 78%',0.25],['Governance Score = 85%',0.25]],columns=('ESG','Score'))
             esg_chart = (
                 (
                     alt.Chart(df_esg)
@@ -270,7 +270,7 @@ def main():
                             field="ESG",
                             type="nominal",
                             title="",
-                            legend=alt.Legend(orient='bottom', direction='vertical', labelFontSize=14)
+                            legend=alt.Legend(orient='bottom', direction='vertical', labelFontSize=14, labelLimit = 400)
                         ),
                     )
                 )
