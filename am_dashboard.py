@@ -68,7 +68,7 @@ def main():
     ]
 
     with st.columns(3)[1]:
-        st.title('AUM Dashboard')
+        st.title('Asset Management Dashboard')
 
     df = get_aum_data()
     df_opm = get_opm_data()
