@@ -9,7 +9,6 @@ import numpy as np
 import altair as alt
 from datetime import datetime, date, timedelta
 import random
-import datetime
 import time
 
 ########################################################################
