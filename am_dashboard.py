@@ -193,7 +193,7 @@ def main():
                     st.altair_chart(opm_chart, use_container_width=True)
                 with col6:
                     df_bench['MONTH'] = pd.to_datetime(df_bench['MONTH'])
-                    st.title("{:.0%}".format(df_bench[df_bench.MONTH==datetime.datetime(2023,12,1)]['VALUE'].values[0]))
+                    st.title("{:.0%}".format(df_bench[df_bench.MONTH==datetime(2023,12,1)]['VALUE'].values[0]))
          
 
             # Row 3
