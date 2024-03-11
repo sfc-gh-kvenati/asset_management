@@ -364,12 +364,12 @@ def main():
                         x=alt.X(
                             "year(DATE)",
                             type="ordinal",
-                            title=""
+                            title="Year"
                         ),
                         y=alt.Y(
                             field="RETURNS",
                             type="quantitative",
-                            title="",
+                            title="10 Year Returns",
                             axis=alt.Axis(format='%')
                         ),
                         color="CATEGORY:N",
